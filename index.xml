@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>ruvate</title>
+    <link>/</link>
+    <description>Recent content on ruvate</description>
+    <image>
+      <url>papermod-cover.png</url>
+      <link>papermod-cover.png</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Wed, 16 Jun 2021 13:53:46 -0500</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Activation Functions</title>
+      <link>/posts/activation-functions/</link>
+      <pubDate>Wed, 16 Jun 2021 13:53:46 -0500</pubDate>
+      
+      <guid>/posts/activation-functions/</guid>
+      <description>What is an activation function? A neural network is comprised of layers of nodes and learns to map examples of inputs to outputs. For a given node, the inputs are multiplied by weights (trainable param) in a node and summed together. This value is reffered to as the summed activation of the node. The summed activation is then transformed via an activation function also known as transfer function and defines the specific output or &amp;ldquo;activation&amp;rdquo; of the node.</description>
+    </item>
+    
+    
+    
+  </channel>
+</rss>

@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Activation Functions | ruvate</title>
+<meta name="keywords" content="" />
+<meta name="description" content="What is an activation function? A neural network is comprised of layers of nodes and learns to map examples of inputs to outputs. For a given node, the inputs are multiplied by weights (trainable param) in a node and summed together. This value is reffered to as the summed activation of the node. The summed activation is then transformed via an activation function also known as transfer function and defines the specific output or &ldquo;activation&rdquo; of the node.">
+<meta name="author" content="">
+<link rel="canonical" href="/posts/activation-functions/" />
+<link crossorigin="anonymous" href="/assets/css/stylesheet.min.35cd0f65a15cafa92372b8313deef5960aae04b90ad722f2bbf509eb0468137e.css" integrity="sha256-Nc0PZaFcr6kjcrgxPe71lgquBLkK1yLyu/UJ6wRoE34=" rel="preload stylesheet" as="style">
+<script defer crossorigin="anonymous" src="/assets/js/highlight.min.7680afc38aa6b15ddf158a4f3780b7b1f7dde7e91d26f073e6229bb7a0793c92.js" integrity="sha256-doCvw4qmsV3fFYpPN4C3sffd5&#43;kdJvBz5iKbt6B5PJI="
+    onload="hljs.initHighlightingOnLoad();"></script>
+<link rel="icon" href="favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="mask-icon" href="safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<meta name="generator" content="Hugo 0.83.1" />
+<meta property="og:title" content="Activation Functions" />
+<meta property="og:description" content="What is an activation function? A neural network is comprised of layers of nodes and learns to map examples of inputs to outputs. For a given node, the inputs are multiplied by weights (trainable param) in a node and summed together. This value is reffered to as the summed activation of the node. The summed activation is then transformed via an activation function also known as transfer function and defines the specific output or &ldquo;activation&rdquo; of the node." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/posts/activation-functions/" /><meta property="og:image" content="papermod-cover.png"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-06-16T13:53:46-05:00" />
+<meta property="article:modified_time" content="2021-06-16T13:53:46-05:00" />
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="papermod-cover.png"/>
+
+<meta name="twitter:title" content="Activation Functions"/>
+<meta name="twitter:description" content="What is an activation function? A neural network is comprised of layers of nodes and learns to map examples of inputs to outputs. For a given node, the inputs are multiplied by weights (trainable param) in a node and summed together. This value is reffered to as the summed activation of the node. The summed activation is then transformed via an activation function also known as transfer function and defines the specific output or &ldquo;activation&rdquo; of the node."/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Posts",
+      "item": "/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  3 ,
+      "name": "Activation Functions",
+      "item": "/posts/activation-functions/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Activation Functions",
+  "name": "Activation Functions",
+  "description": "What is an activation function? A neural network is comprised of layers of nodes and learns to map examples of inputs to outputs. For a given node, the inputs are multiplied by weights (trainable param) in a node and summed together. This value is reffered to as the summed activation of the node. The summed activation is then transformed via an activation function also known as transfer function and defines the specific output or \u0026ldquo;activation\u0026rdquo; of the node.",
+  "keywords": [
+    
+  ],
+  "articleBody": "What is an activation function? A neural network is comprised of layers of nodes and learns to map examples of inputs to outputs. For a given node, the inputs are multiplied by weights (trainable param) in a node and summed together. This value is reffered to as the summed activation of the node. The summed activation is then transformed via an activation function also known as transfer function and defines the specific output or “activation” of the node.\nwhy do we use activation function in NN ?\n It is used to determine the output of neural network like yes or no. It maps resulting values in between 0 to 1 or -1 to 1 etc. (depending on the function). In a sense, it determines how much a node should fire up in order to get to the final output.  Types of Activation Functions (in brief)  The activation functions can be divided into 2 broad categories:   Linear Activation Function Non-Linear Activation Functions  Linear or Identity Activation Function This as the name suggests is a line or linear function. Therefore, the output of the functions will not be confined between any range.\nEquation : f(x) = x\nRange = (-infinity to infinity)\nIt doesn’t help with the complexity of various parameters of usual data that is fed to the neural networks.\nNon-Linear Activation Function The non-linear activation functions are the most used activation functions. Nonlinearity helps to makes the graph look something like this. It makes it easy for the model to generalize or adapt with variety of data and to differentiate between the output.\nThe main terminologies needed to understand for nonlinear functions are:\nDerivative or Differential : : change in y-axis w.r.t change in x-axis. It is also known as slope. The activation function should be differential because we want to calculate the change in error with respect to given weights at the time of gradient descent.\nMonotonic function : : A function which is either entirely non-increasing or non-decreasing. If the activation function isn’t monotonic then increasing the neuron’s weight might cause it to have less influence on reducing the error of the cost function.\nQuickly Converging : : The meaning of quickly converging means that the activation function should fastly reach its desired value. Suppose we want two outputs which are 0 and 1, then we want that the activation function should quickly converge to either 0 or 1.\nThe non-linear activation functions are mainly divided on the basis of their range or curves.\n Sigmoid or Logistic Activation Function   The sigmoid function curve looks like a S-shape.  The main reason why we use sigmoid function is because it exists between (0 and 1). Therefore, it is especially used for models where we have to predict the probability as an output. Since, probability of anything exists only between the range of 0 and 1, sigmoid is the right choice.\n  The function is differentiable. That means, we can find the slope of the sigmoid curve at any two points.\n  The function is monotonic but function’s derivative is not.\n  The logistic sigmoid function can cause a network to get stuck at training time. The softmax function is a more generalized logistic activation function which is used for multiclass classification.\nTanh or hyperbolic tangent Activation Function  tanh is also like logistic sigmoid but better. The range of the tanh function is from (-1 to 1). tanh is also sigmoidal (s-shaped).\nThe advantage is that the negative inputs will be mapped strongly negative and the zero inputs will be mapped near zero in the tanh graph.\n  The function is differentiable.\n  The function is monotonic while its derivative is not monotonic.\n  The tanh function is mainly used for classification between two classes. Both tanh and logistic sigmoid activation functions are used in feed-forward nets.\nReLU (Rectified Linear Unit) Activation Function  The ReLU is the most used activation function in the world right now; since, it is used in almost all the convolutional neural networks or deep learning.\nAs you can see, the ReLU is half rectified (from bottom). f(z) is zero when z is less than zero and f(z) is equal to z when z is above or equal to zero.\nRange : [ 0 to infinity )\nThe function and its derivative both are monotonic.\nBut the issue is that all the negative values become zero immediately which decreases the ability of the model to fit or train from the data properly. That means any negative input given to the ReLU activation function turns the value into zero immediately in the graph, which in turns affects the resulting graph by not mapping the negative values appropriately.\nLeaky ReLU  It is an attempt to solve the dying ReLU problem.\nThe leak is on the negative values of the input with an equation f(y) = ay. The leak helps to increase the range of the ReLU function. Usually, the value of a is 0.01 or so. When a is not 0.01 then it is called Randomized ReLU.\nTherefore, the range of the Leaky ReLU is ( - infinity to + infinity).\nBoth Leaky and Randominzed ReLU functions are monotonic in nature. Also, their derivatives are also monotonic in nature.\nActivation Function Cheetsheet New Kid around the block : Swish by Google   The choice of activation functions in Deep Neural Networks has a significant impact on the training dynamics and task performance. Currently, the most successful and widely-used actiation function is the Rectified Linear Unit (ReLU), which is f(x) = max(0, x). Although various alternatives to ReLU have been proposed, none have managed to replace it due to inconsistent gains. So, google brain team has proposed a new activation function, named Swish, which is simply f(x) = x * sigmoird(x). Their experiments show that Swish tends to work better than ReLU on deeper models across a number of challenging datasets. For example, simply replacing ReLUs with Swish units improves top-1 classfication accuracy on ImageNet by 0.9% for Mobile NASNetA and 0.6% for Inception-ResNEt-v2. The simplicity of Swish and its similarity to ReLU make it easy for practitioners to replace ReLUs with Swish units in any neural network.\n  With ReLU, the consistent problem is that its derivative is 0 for half of the values of the input x in ramp Function, i.e. f(x) = max(0, x). As their parameter update algorithm, they have used Stochastic Gradient Descent and if the parameter itself is 0, then that parameter will never be updated as it just assigns the parameter back to itself, leading close to 40% Dead Neurons in the Neural network environment. Various substitutes like Leaky ReLU or SELU (Self-Normalizing Neural Networks) have unsuccessfully tried to devoid it of this issue but now there seems to be a revolution for good.\nSwish is a smooth, non-monotonic function that consistently matches or outperforms ReLU on deep networks applied to a variety of challenging domains such as Image classification and Machine translation. It is unbounded above and bounded below \u0026 it is the non-monotonic attribute that actually creates the difference. With self-gating, it requires just a scalar input whereas in multi-gating scenarios, it would require multiple two-scalar input.\n It has been inspired by the use of Sigmoid function in LSTM and Highway networks where ‘self-gated’ means that the gate is actually the ‘sigmoid’ of activation itself.  We can train deeper Swish networks than ReLU networks when using BatchNorm despite having gradient squishing property. With MNIST data set, when Swish and ReLU are compared, both activation functions achieve similar performances up to 40 layers. However, Swish outperforms ReLU by a large margin in the range between 40 and 50 layers when optimization becomes difficult. In very deep networks, Swish achieves higher test accuracy than ReLU. In terms of batch size, the performance of both activation functions decreaseas batch size increases, potentially due to sharp minima. However, Swish outperforms ReLU on every batch size, suggesting that the performance difference between the two activation functions remains even when varying the batch size.\nObviously, the real potential can be adjudged only when we use it for ourselves and analyze the difference. Feel free to implement Swish in your own way and see how much performance boost does it provide.\nEnjoy Machine Learning !\n",
+  "wordCount" : "1369",
+  "inLanguage": "en",
+  "datePublished": "2021-06-16T13:53:46-05:00",
+  "dateModified": "2021-06-16T13:53:46-05:00",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "/posts/activation-functions/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "ruvate",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class=" dark" id="top">
+<noscript>
+    <style type="text/css">
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+</noscript>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="" accesskey="h" title="ruvate (Alt + H)">ruvate</a>
+            <span class="logo-switches">
+            </span>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="archives/" title="arxiv">
+                    <span>arxiv</span>
+                </a>
+            </li>
+            <li>
+                <a href="search/" title="search (Alt &#43; /)" accesskey=/>
+                    <span>search</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="">Home</a>&nbsp;»&nbsp;<a href="/posts/">Posts</a></div>
+    <h1 class="post-title">
+      Activation Functions
+    </h1>
+    <div class="post-meta">June 16, 2021&nbsp;·&nbsp;7 min
+</div>
+  </header> <div class="toc">
+    <details >
+        <summary accesskey="c" title="(Alt + C)">
+            <div class="details">Table of Contents</div>
+        </summary>
+        <div class="inner"><ul>
+                <li>
+                    <a href="#what-is-an-activation-function" aria-label="What is an activation function?">What is an activation function?</a><ul>
+                        
+                <li>
+                    <a href="#types-of-activation-functions-in-brief" aria-label="Types of Activation Functions (in brief)">Types of Activation Functions (in brief)</a><ul>
+                        
+                <li>
+                    <a href="#linear-or-identity-activation-function" aria-label="Linear or Identity Activation Function">Linear or Identity Activation Function</a></li>
+                <li>
+                    <a href="#non-linear-activation-function" aria-label="Non-Linear Activation Function">Non-Linear Activation Function</a></li>
+                <li>
+                    <a href="#activation-function-cheetsheet" aria-label="Activation Function Cheetsheet">Activation Function Cheetsheet</a></li></ul>
+                </li></ul>
+                </li>
+                <li>
+                    <a href="#new-kid-around-the-block--swish-by-google" aria-label="New Kid around the block : Swish by Google">New Kid around the block : Swish by Google</a>
+                </li>
+            </ul>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><h2 id="what-is-an-activation-function">What is an activation function?<a hidden class="anchor" aria-hidden="true" href="#what-is-an-activation-function">#</a></h2>
+<p>A neural network is comprised of layers of nodes and learns to map examples of inputs to outputs. For a given node, the inputs are multiplied by weights (trainable param) in a node and summed together. This value is reffered to as the <em>summed activation</em> of the node. The summed activation is then transformed via an <strong>activation function</strong> also known as <strong>transfer function</strong> and defines the specific output or &ldquo;activation&rdquo; of the node.</p>
+<p><em><strong>why do we use activation function in NN ?</strong></em></p>
+<ul>
+<li>It is used to determine the output of neural network like yes or no. It maps resulting values in between 0 to 1 or -1 to 1 etc. (depending on the function). In a sense, it determines how much a node should fire up in order to get to the final output.</li>
+</ul>
+<h3 id="types-of-activation-functions-in-brief">Types of Activation Functions (in brief)<a hidden class="anchor" aria-hidden="true" href="#types-of-activation-functions-in-brief">#</a></h3>
+<ul>
+<li>The activation functions can be divided into 2 broad categories:</li>
+</ul>
+<ol>
+<li>Linear Activation Function</li>
+<li>Non-Linear Activation Functions</li>
+</ol>
+<h4 id="linear-or-identity-activation-function">Linear or Identity Activation Function<a hidden class="anchor" aria-hidden="true" href="#linear-or-identity-activation-function">#</a></h4>
+<p>This as the name suggests is a line or linear function. Therefore, the output of the functions will not be confined
+between any range.</p>
+<p>Equation :  f(x) = x</p>
+<p>Range = (-infinity to infinity)</p>
+<p>It doesn&rsquo;t help with the complexity of various parameters of usual data that is fed to the neural networks.</p>
+<h4 id="non-linear-activation-function">Non-Linear Activation Function<a hidden class="anchor" aria-hidden="true" href="#non-linear-activation-function">#</a></h4>
+<p>The non-linear activation functions are the most used activation functions. Nonlinearity helps to makes the graph look
+something like this. It makes it easy for the model to generalize or adapt with variety of data and to differentiate
+between the output.</p>
+<p>The main terminologies needed to understand for nonlinear functions are:</p>
+<p><em>Derivative or Differential</em> : : change in y-axis w.r.t change in x-axis. It is also known as slope. The activation
+function should be differential because we want to calculate the change in error with respect to given weights at the
+time of gradient descent.</p>
+<p><em>Monotonic function</em> : : A function which is either entirely non-increasing or non-decreasing. If the activation
+function isn&rsquo;t monotonic then increasing the neuron&rsquo;s weight might cause it to have less influence on reducing the error
+of the cost function.</p>
+<p><em>Quickly Converging</em> : : The meaning of quickly converging means that the activation function should fastly reach its
+desired value. Suppose we want two outputs which are 0 and 1, then we want that the activation function should quickly
+converge to either 0 or 1.</p>
+<p>The non-linear activation functions are mainly divided on the basis of their <em>range</em> or <em>curves</em>.</p>
+<ol>
+<li>Sigmoid or Logistic Activation Function</li>
+</ol>
+<ul>
+<li>The sigmoid function curve looks like a S-shape.</li>
+</ul>
+<p>The main reason why we use sigmoid function is because it exists between (0 and 1). Therefore, it is especially used for
+models where we have to predict the probability as an output. Since, probability of anything exists only between the
+range of 0 and 1, sigmoid is the right choice.</p>
+<ul>
+<li>
+<p>The function is <em>differentiable</em>. That means, we can find the slope of the sigmoid curve at any two points.</p>
+</li>
+<li>
+<p>The function is <em>monotonic</em> but function&rsquo;s derivative is not.</p>
+</li>
+</ul>
+<p>The logistic sigmoid function can cause a network to get stuck at training time. The <em>softmax function</em> is a more
+generalized logistic activation function which is used for multiclass classification.</p>
+<ol start="2">
+<li>Tanh or hyperbolic tangent Activation Function</li>
+</ol>
+<p>tanh is also like logistic sigmoid but better. The range of the tanh function is from (-1 to 1). tanh is also sigmoidal
+(s-shaped).</p>
+<p>The advantage is that the negative inputs will be mapped strongly negative and the zero inputs will be mapped near zero
+in the tanh graph.</p>
+<ul>
+<li>
+<p>The function is <em>differentiable</em>.</p>
+</li>
+<li>
+<p>The function is <em>monotonic</em> while its <em>derivative is not monotonic</em>.</p>
+</li>
+</ul>
+<p>The tanh function is mainly used for classification between two classes. <strong>Both tanh and logistic sigmoid activation
+functions are used in feed-forward nets.</strong></p>
+<ol start="3">
+<li>ReLU (Rectified Linear Unit) Activation Function</li>
+</ol>
+<p>The ReLU is the most used activation function in the world right now; since, it is used in almost all the convolutional
+neural networks or deep learning.</p>
+<p>As you can see, the ReLU is half rectified (from bottom). f(z) is zero when z is less than zero and f(z) is equal to z
+when z is above or equal to zero.</p>
+<p>Range : [ 0 to infinity )</p>
+<p>The function and its derivative <em>both are monotonic</em>.</p>
+<p>But the issue is that all the negative values become zero immediately which decreases the ability of the model to fit or
+train from the data properly. That means any negative input given to the ReLU activation function turns the value into
+zero immediately in the graph, which in turns affects the resulting graph by not mapping the negative values
+appropriately.</p>
+<ol start="4">
+<li>Leaky ReLU</li>
+</ol>
+<p>It is an attempt to solve the dying ReLU problem.</p>
+<p>The leak is on the negative values of the input with an equation f(y) = ay. The leak helps to increase the range of the ReLU function. Usually, the value of a is 0.01 or so. When a is not 0.01 then it is called <em>Randomized ReLU</em>.</p>
+<p>Therefore, the range of the Leaky ReLU is ( - infinity to + infinity).</p>
+<p>Both Leaky and Randominzed ReLU functions are monotonic in nature. Also, their derivatives are also monotonic in nature.</p>
+<h4 id="activation-function-cheetsheet">Activation Function Cheetsheet<a hidden class="anchor" aria-hidden="true" href="#activation-function-cheetsheet">#</a></h4>
+<p><img loading="lazy" src="/images/eq.png" alt="Activation Function Cheetsheet"  />
+</p>
+<h2 id="new-kid-around-the-block--swish-by-google">New Kid around the block : Swish by Google<a hidden class="anchor" aria-hidden="true" href="#new-kid-around-the-block--swish-by-google">#</a></h2>
+<ul>
+<li>
+<p>The choice of activation functions in Deep Neural Networks has a significant impact on the training dynamics and task
+performance. Currently, the most successful and widely-used actiation function is the Rectified Linear Unit (ReLU),
+which is f(x) = max(0, x). Although various alternatives to ReLU have been proposed, none have managed to replace it
+due to inconsistent gains. So, google brain team has proposed a new activation function, named <em>Swish</em>, which is
+simply f(x) = x * sigmoird(x). Their experiments show that Swish tends to work better than ReLU on deeper models
+across a number of challenging datasets. For example, simply replacing ReLUs with Swish units improves top-1
+classfication accuracy on ImageNet by 0.9% for Mobile NASNetA and 0.6% for Inception-ResNEt-v2. The simplicity of
+Swish and its similarity to ReLU make it easy for practitioners to replace ReLUs with Swish units in any neural
+network.</p>
+<p><img loading="lazy" src="/images/swish.png" alt="Swish Activation Function"  />
+</p>
+</li>
+</ul>
+<p>With ReLU, the consistent problem is that its derivative is 0 for half of the values of the input x in <em>ramp Function</em>, i.e. f(x) = max(0, x). As their parameter update algorithm, they have used <em>Stochastic Gradient Descent</em> and if the parameter itself is 0, then that parameter will never be updated as it just assigns the parameter back to itself, leading close to <strong>40% Dead Neurons in the Neural network environment</strong>. Various substitutes like Leaky ReLU or SELU (Self-Normalizing Neural Networks) have unsuccessfully tried to devoid it of this issue but now there seems to be a revolution for good.</p>
+<p><img loading="lazy" src="/images/comparison.png" alt="comparison between sigmoid, hyperbolic tangent, ReLU and Softplus"  />
+</p>
+<p><em>Swish is a smooth, non-monotonic function</em> that consistently matches or outperforms ReLU on deep networks applied to a
+variety of challenging domains such as Image classification and Machine translation. It is unbounded above and bounded
+below &amp; it is the non-monotonic attribute that actually creates the difference. <em>With self-gating, it requires just a
+scalar input</em> whereas in multi-gating scenarios, it would require multiple two-scalar input.</p>
+<ul>
+<li>It has been inspired by the use of Sigmoid function in <a href="https://www.bioinf.jku.at/publications/older/2604.pdf">LSTM</a> and <a href="https://arxiv.org/pdf/1505.00387.pdf">Highway networks</a> where &lsquo;self-gated&rsquo; means that the gate is actually the &lsquo;sigmoid&rsquo; of activation itself.</li>
+</ul>
+<p>We can train deeper Swish networks than ReLU networks when using
+<a href="http://people.ee.duke.edu/~lcarin/Zhao12.17.2015.pdf">BatchNorm</a> despite having gradient squishing property. With
+<a href="http://yann.lecun.com/exdb/mnist/">MNIST data set</a>, when Swish and ReLU are compared, both activation functions achieve
+similar performances up to 40 layers. However, Swish outperforms ReLU by a large margin in the range between 40 and 50
+layers when optimization becomes difficult. In very deep networks, Swish achieves higher test accuracy than ReLU. In
+terms of batch size, the performance of both activation functions decreaseas batch size increases, potentially due to
+<a href="https://arxiv.org/pdf/1703.04933.pdf">sharp minima</a>. However, Swish outperforms ReLU on every batch size, suggesting
+that the performance difference between the two activation functions remains even when varying the batch size.</p>
+<p>Obviously, the real potential can be adjudged only when we use it for ourselves and analyze the difference. Feel free to
+implement Swish in your own way and see how much performance boost does it provide.</p>
+<p>Enjoy Machine Learning !</p>
+
+
+  </div>
+  <footer class="post-footer">
+
+  </footer>
+</article>
+    </main>
+    <footer class="footer">
+    <span>&copy; 2021 <a href="">ruvate</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://git.io/hugopapermod" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)">
+    <button class="top-link" id="top-link" type="button" accesskey="g">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+            <path d="M12 6H0l6-6z" />
+        </svg>
+    </button>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+    menu.onscroll = function () {
+        localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerText = 'copy';
+
+        function copyingDone() {
+            copybutton.innerText = 'copied!';
+            setTimeout(() => {
+                copybutton.innerText = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>
